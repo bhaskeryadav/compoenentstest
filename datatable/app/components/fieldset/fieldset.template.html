@@ -1,0 +1,6 @@
+<fieldset>
+    <legend (click)="toggle()">{{title}}</legend>
+    <div [hidden]="!visible">
+        <ng-content></ng-content>
+    </div>
+ </fieldset>

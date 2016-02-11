@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Datatable Header</div>
+  <!--  <table class="table table-striped table-bordered table-hover table-condensed">
+       
+        <tbody>      
+            <tr *ngFor="#row of rows">        
+                <td *ngFor="#data of row">
+                    {{data}}
+                </td>
+            </tr> 
+        </tbody>
+        <tfoot>
+            <tr>
+            <td *ngFor="#foot of header">
+                {{foot}}           
+            </td>      
+            </tr>
+        </tfoot>
+    </table>-->
+    
+    <ul>
+        <li *ngFor="#c of content|async">
+            {{c.name}}
+        </li>
+    </ul>
+</div>
+
+    

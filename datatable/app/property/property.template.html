@@ -1,0 +1,39 @@
+<div id="wrapper">
+    <div id="page-content-wrapper">
+      
+        <div class="container-fluid">
+          <form class="form-horizontal" role="form"> >
+               
+                <asset-oit assetId="seizedBy" assetLabel="Seized By" assetTextHint="Enter category" 
+                        assetTootTip="Please enter category" ></asset-oit> 
+                      
+        
+                <asset-oit assetId="whereFound" assetLabel="Where Found" assetTextHint="" 
+                        assetTootTip="Please enter your user name here"></asset-oit> 
+                
+                 <asset-osom assetLabel="object Type" assetDefaultLabel="Please select" [(bindModelData)]="osomSelected1"
+                typologyName="ObjectType"></asset-osom>
+                
+                        
+                  <div [ngSwitch]="switchValue">
+                        <div *ngSwitchWhen="'1'">
+                            
+                            
+                        </div>
+                        <div *ngSwitchWhen="'2'">
+                           
+                            {{switchValue}}
+                        </div>
+                       
+                    </div>
+                     <div class="panel panel-default">
+            <div class="panel-body text-right">                                                
+                <button type="submit" class="btn btn-primary" (click)="logValues()">Save Object</button>                
+                <button type="button" class="btn btn-danger">Cancel</button>
+            </div>
+        </div>  
+          </form>
+        </div>
+   
+    </div>
+</div>

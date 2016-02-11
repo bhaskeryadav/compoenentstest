@@ -1,0 +1,65 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="glyphicon glyphicon-menu-hamburger"></span>
+        </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+        <ul class="nav navbar-nav">
+            <li><a>Object Details</a></li>
+            <li><a>Property Action</a></li>
+            <li><a>Moevements</a></li>
+            <li><a>Comments</a></li> 
+            <li><a>Dispose</a></li> 
+        </ul>      
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+    </nav>
+
+
+    <form class="form-horizontal" role="form"> 
+        
+        <asset-fieldset title="Object Details">
+            
+            <asset-oit assetId="userName" assetLabel="UserName:" assetTextHint="Enter your user name" 
+                assetTootTip="Please enter your user name here" [(bindModelData)]="userName"></asset-oit>   
+            
+            <asset-oit assetId="ankitaLabel" assetLabel="Ankita Label:" [(bindModelData)]="ankita"
+            assetDisabled={{true}}></asset-oit>            
+            
+            <asset-osom assetLabel="DropDown Label" [(bindModelData)]="osomSelected1"
+                typologyName="ObjectType" dependentType=""></asset-osom>
+            <asset-osom assetLabel="Second Dropdown" assetDefaultLabel="Please select" 
+                [(bindModelData)]="osomSelected2" typologyName="ObjectType" dependentType={{osomSelected1.desc}}></asset-osom>
+
+            <asset-ol assetTitle={{userName}} assetLabel={{userName}}></asset-ol>
+            <asset-ol assetLabel={{ankita}}></asset-ol>
+            <div *ngIf="osomSelected1">
+                <asset-ol assetLabel={{osomSelected1.desc}}></asset-ol>
+            </div>
+            <asset-ol assetLabel={{osomSelected2.desc}}></asset-ol>
+             
+            <asset-fieldset title="Datatable FieldSet">
+                <!--<asset-datatable [header]="header" [rows]="rows"></asset-datatable>-->
+                <asset-datatable [content]="content"></asset-datatable>        
+            </asset-fieldset>
+           
+       
+        
+                 
+        </asset-fieldset>
+        
+        <div class="panel panel-default">
+            <div class="panel-body text-right">                                                
+                <button type="submit" class="btn btn-primary" (click)="logValues()">Save Object</button>                
+                <button type="button" class="btn btn-danger">Cancel</button>
+            </div>
+        </div>  
+    </form>   
+</div>

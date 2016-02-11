@@ -1,0 +1,11 @@
+<div class="form-group col-lg-12">
+    <label class="col-lg-3 control-label" title="">{{assetLabel}}</label>
+    <div class="col-lg-9">
+        <select class="form-control" [ngModel]="bindModelData.id">            
+            <option disabled selected>{{assetDefaultLabel}}</option> 
+            <option *ngFor="#typology of typologyValues" (click)="updateData(typology)" [value]="typology.id">
+                {{typology.desc}}
+            </option>
+        </select>
+    </div>
+</div>
