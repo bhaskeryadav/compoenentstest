@@ -34,27 +34,9 @@ export class ObjectComponent implements OnInit{
     ngOnInit(){
         this.osomSelected2 = new Typology('', '', '');
         this.osomSelected1 = new Typology('', '', '');
-         let headerA=["ID","Month","Quantity","Name"];
-        let footerA={"columns":["Total","-","500","-"]};
-        let rowsA=[
-           ["1","Jan"],
-           ["2","Feb","20","Hello2"]
-        
-        ];
+ 
           this.content=this.http.get('contents.json')
-            .map(res => res.json());
-        /*
-        this.header=Observable.fromArray(headerA);
-        //this.footer=Observable.fromArray(footerA);
-        
-        alert('asdas');
-        for (var index = 0; index < rowsA.length;index++) {
-            this.rows.concat(Observable.fromArray(rowsA[index]));       
-        }
-        alert('978889');
-        
-*/        
-        
+            .map(res => res.json());      
         
     }
     

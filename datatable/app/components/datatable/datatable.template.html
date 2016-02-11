@@ -19,11 +19,19 @@
         </tfoot>
     </table>-->
     
-    <ul>
-        <li *ngFor="#c of content|async">
-            {{c.name}}
-        </li>
-    </ul>
+    <table class="table table-striped table-bordered table-hover table-condensed">
+    
+
+                <tbody>      
+                    
+                <tr *ngFor="#c of content|async">
+                    <td> {{c.name}}</td>
+                    <td>{{c.skill}}</td>
+                </tr>
+             
+        </tbody>
+    
+    </table>
 </div>
 
     
