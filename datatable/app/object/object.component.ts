@@ -43,5 +43,9 @@ export class ObjectComponent implements OnInit{
     logValues(){
         console.log(this.userName+' '+this.ankita+' '+this.osomSelected1.desc+' '+this.osomSelected2.desc);        
     }
+    
+    onSelect(data:string){
+        console.log("emitted data "+data)
+    }
 
 }

@@ -23,10 +23,9 @@
     
 
                 <tbody>      
-                    
-                <tr *ngFor="#c of content|async">
-                    <td> {{c.name}}</td>
-                    <td>{{c.skill}}</td>
+                
+                <tr *ngFor="#c of content | async" (click)="onRowSelect(c.id)">           
+                    <td *ngFor="#key of c | keys">{{key}}: {{c[key]}}</td>
                 </tr>
              
         </tbody>

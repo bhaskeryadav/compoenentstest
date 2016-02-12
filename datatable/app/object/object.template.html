@@ -46,8 +46,7 @@
             <asset-ol assetLabel={{osomSelected2.desc}}></asset-ol>
              
             <asset-fieldset title="Datatable FieldSet">
-                <!--<asset-datatable [header]="header" [rows]="rows"></asset-datatable>-->
-                <asset-datatable [content]="content"></asset-datatable>        
+                <asset-datatable [content]="content" (onRowSelectListener)="onSelect($event)"></asset-datatable>        
             </asset-fieldset>
            
        
