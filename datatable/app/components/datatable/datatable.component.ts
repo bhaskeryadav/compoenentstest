@@ -3,7 +3,7 @@ import {Observable} from 'rxjs/Observable';
 import {Row} from './rows';
 import {SearchPipe} from './search.pipe';
 import {SortPipe} from './sort.pipe';
-import {KeysPipe} from './key.pipe';
+import {JsonIterator} from './json.iterator.pipe';
 import {Http,HTTP_PROVIDERS} from 'angular2/http';
 import 'rxjs/add/operator/map';
 
@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
     selector:'asset-datatable',
     viewProviders:[HTTP_PROVIDERS],    
     templateUrl:'app/components/datatable/datatable.template.html',
-    pipes:[SearchPipe,SortPipe,KeysPipe]
+    pipes:[SearchPipe,SortPipe,JsonIterator]
 })
 export class DatatableComponent implements OnInit{
     @Input() rows:Observable<Observable<string>>;
