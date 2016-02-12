@@ -40,12 +40,18 @@ export class ObjectComponent implements OnInit{
         
     }
     
+    //TODO : make the html call this function to get the contents 
+    get tableContents(){
+        return this.http.get('contents.json')
+            .map(res => res.json());
+    }
+    
     logValues(){
         console.log(this.userName+' '+this.ankita+' '+this.osomSelected1.desc+' '+this.osomSelected2.desc);        
     }
     
-    onSelect(data:string){
-        console.log("emitted data "+data)
+    onSelect(data:any){
+        console.log("emitted data "+data.id)
     }
 
 }
