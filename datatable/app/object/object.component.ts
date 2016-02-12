@@ -5,6 +5,7 @@ import {OitComponent} from '../components/oit/oit.component';
 import {OsomComponent} from '../components/osom/osom.component';
 import {OlComponent} from '../components/ol/ol.component';
 import {DatatableComponent} from '../components/datatable/datatable.component';
+import {DataTableBean} from '../components/datatable/datatable.bean';
 import {Typology} from '../components/osom/typology';
 import {Row} from '../components/datatable/rows';
 import 'rxjs/add/observable/fromArray';
@@ -28,6 +29,9 @@ export class ObjectComponent implements OnInit{
     header:Observable<string>;
     footer:Row;
     content:Observable<string>;
+    
+    tableBean:DataTableBean=new DataTableBean();
+    
     constructor(private http:Http){
         
     }
@@ -35,8 +39,11 @@ export class ObjectComponent implements OnInit{
         this.osomSelected2 = new Typology('', '', '');
         this.osomSelected1 = new Typology('', '', '');
  
-          this.content=this.http.get('contents.json')
-            .map(res => res.json());      
+          /*this.content=this.http.get('contents.json')
+            .map(res => res.json());*/
+            
+            this.tableBean.columns= this.http.get('contents.json')
+            .map(res => res.json());     
         
     }
     
@@ -50,8 +57,9 @@ export class ObjectComponent implements OnInit{
         console.log(this.userName+' '+this.ankita+' '+this.osomSelected1.desc+' '+this.osomSelected2.desc);        
     }
     
-    onSelect(data:any){
-        console.log("emitted data "+data.id)
+    onSelect(){
+       // console.log("emitted data "+data.id)
+        console.log("emitted data "+this.tableBean.selectedRow.id);
     }
 
 }

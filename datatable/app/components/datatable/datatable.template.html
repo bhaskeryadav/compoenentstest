@@ -24,7 +24,7 @@
 
                 <tbody>      
                 
-                <tr *ngFor="#c of content | async" (click)="onRowSelect(c)">           
+                <tr *ngFor="#c of tableData.columns | async" (click)="onRowSelect(c)">           
                     <td *ngFor="#key of c | jsonIterator">{{key}}: {{c[key]}}</td>
                 </tr>
              
