@@ -28,12 +28,13 @@ export class DatatableComponent implements OnInit{
     ngOnInit(){
        
        //TODO : find out how to load header and footer from the json 
-        
+       // console.log("datatable init");
+        this.tableData.generateHeader();
     }    
     
     onRowSelect(data:any){
         this.tableData.selectedRow=data;
-        console.log('selected data : '+data);
+       // console.log('selected data : '+data);
         this.onRowSelectListener.emit(data);
     }
     

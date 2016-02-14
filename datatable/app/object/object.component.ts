@@ -44,7 +44,7 @@ export class ObjectComponent implements OnInit{
             
             this.tableBean.columns= this.http.get('contents.json')
             .map(res => res.json());     
-        
+       // console.log("object's init");
     }
     
     //TODO : make the html call this function to get the contents 
@@ -59,7 +59,7 @@ export class ObjectComponent implements OnInit{
     
     onSelect(){
        // console.log("emitted data "+data.id)
-        console.log("emitted data "+this.tableBean.selectedRow.id);
+        //console.log("emitted "+this.tableBean.selectedRow.id);
     }
 
 }

@@ -1,9 +1,9 @@
-import {Pipe} from 'angular2/core';
+import {Pipe,PipeTransform} from 'angular2/core';
 
 @Pipe({
     name:"search"
 })
-export class SearchPipe{
+export class SearchPipe implements PipeTransform{
     searchTerms:Map<string,string> = new Map<string,string>();
     
     transform(input, [colIndex, term]){               
