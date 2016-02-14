@@ -18,7 +18,8 @@
                     </tr>
                     <tr>
                         <td  colspan=2>
-                            <input class="col-lg-12" type="text" #input (keyup)="filterTerm=input.value; columnIndex=columnIndexL">
+                            <input class="col-lg-12" type="text" #input (keyup)="filterTerm=input.value; 
+                            columnIndex=headerI;columnKey=key">
                         </td>
                     </tr>
                 </table>
@@ -28,7 +29,7 @@
 
     <tbody>
 
-        <tr *ngFor="#column of tableData.columns | async " (click)="onRowSelect(column)">
+        <tr *ngFor="#column of tableData.columns | search:columnIndex:filterTerm:columnKey | async" (click)="onRowSelect(column)">
             <td *ngFor="#key of column | jsonIterator">{{column[key]}}</td>
         </tr>
 

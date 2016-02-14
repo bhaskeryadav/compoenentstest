@@ -20,8 +20,9 @@ export class DatatableComponent implements OnInit{
    
     @Output() onRowSelectListener:EventEmitter<any> = new EventEmitter();
 
-    filterTerm:string='';
+    filterTerm:string='h';
     columnIndex:number=0;
+    columnKey:string='';
     
     @Input() tableData:DataTableBean;
              

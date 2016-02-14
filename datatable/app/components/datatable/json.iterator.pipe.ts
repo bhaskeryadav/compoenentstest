@@ -7,7 +7,7 @@ export class JsonIterator implements PipeTransform {
       console.log("11111 "+value);
     let keys = [];
     for (let key in value) {
-        console.log("key "+key);
+        //console.log("key "+key);
       keys.push(key);
     }
     return keys;
